@@ -65,3 +65,12 @@ h1{
     font-size: xx-large;
     text-align: center;
 }
+
+#input{
+	margin-top: 3em;
+	padding: 3em;
+	text-align: center;
+}
+input{
+	border-radius: 1em;
+}
