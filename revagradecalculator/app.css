@@ -1,3 +1,4 @@
+
 /* Elements */
 body {
   background-color: #fdfcdc;
@@ -31,6 +32,10 @@ body {
   padding: 2%;
 }
 
+input{
+  font-size: large;
+}
+
 /* Entry */
 .entry {
   background-color: #e9ecef;
@@ -55,17 +60,23 @@ body {
 .number-form button {
   height: 40px;
   width: 30%;
+  font-size: x-large;
   margin: 2%;
   border-radius: 10px;
   border-style: none;
   padding: 0.3%;
   font-family: "Lato", sans-serif;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+/* |||  Button styles ||| */
 
 .number-form button:hover {
   cursor: pointer;
-  background-color: #f77f00;
+  color: white;
+  background-color: #f77f00;  
   color: #dee2e6;
+  box-shadow: rgb(247, 127, 0) 0px 5px 15px;
 }
 
 /* Subjects */

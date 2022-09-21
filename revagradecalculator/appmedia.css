@@ -1,0 +1,65 @@
+@media (max-width:500px){
+
+    body{
+        font-family: 'Montserrat', sans-serif !important;
+        font-family: 'Poppins', sans-serif !important;
+      }
+
+    #revalogo{
+        width:100%;
+    }
+
+
+    input{
+        font-size: medium;
+        text-align: center;
+        width: auto;
+        height: auto;
+    }
+
+    button{
+        width: auto;
+        height: auto;
+    }
+
+    .entry{
+        margin: 10px;
+        margin-top: 20px;
+        border-radius: 8px;
+    
+    }
+
+    .entry input{
+        height: 30px;
+    }
+
+    .entry button{
+        font-size: medium;
+        height: 30px;
+    }
+
+    #subjectnumbersection{
+        border-radius: 8px;
+        margin: 10px;
+    }
+
+    
+
+    .subjects button{
+        font-size: medium;
+    }
+
+    #numbersublabel{
+        font-size: medium;
+    }
+
+    #numbersub{
+        height:30px;
+    }
+
+    #subjectnumbersection button{
+        height: 30px;
+    }
+
+    
+}
