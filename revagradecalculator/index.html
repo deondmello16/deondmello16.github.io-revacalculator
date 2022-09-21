@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <!-- Lato -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Css -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="app.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="images/Favicon.png" />
+    <title>Reva Grade Calculator</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="reva-nav">
+        <img id="revalogo" src="images/Reva.png" />
+      </div>
+      <div class="items-nav">
+        <ul id="items-holder">
+          <li class="item"><a href="#">Home</a></li>
+          <li class="item"><a href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Entry -->
+    <div class="entry">
+      <form class="number-form">
+        <div>
+          <input
+            id="numberofinternal"
+            placeholder="Number of Internals"
+            type="number"
+          />
+          <input
+            id="numberofassignment"
+            placeholder="Number of Assignments"
+            type="number"
+          />
+        </div>
+        <button id="iasubmit" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Subjects -->
+    <div id="subjectnumbersection" class="subjects">
+      <form class="number-form">
+        <label id="numbersublabel" for="numbersub">Subjects</label>
+        <input id="numbersub" placeholder="Number of Subjects" type="number" />
+        <button type="submit">Process</button>
+      </form>
+    </div>
+    <!-- Script -->
+    <script src="app.js"></script>
+  </body>
+</html>

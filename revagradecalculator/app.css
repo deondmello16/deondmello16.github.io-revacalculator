@@ -1,0 +1,99 @@
+/* Elements */
+body {
+  background-color: #fdfcdc;
+}
+/* Classes */
+/* Navbar */
+.reva-nav {
+  background-color: #ced4da;
+  text-align: center;
+}
+
+.item {
+  display: inline;
+  text-decoration: none;
+}
+
+.item a {
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+  font-size: 150%;
+  padding: 2%;
+  color: #6c757d;
+}
+
+.item a:hover {
+  color: #212529;
+}
+
+.items-nav {
+  background-color: #dee2e6;
+  padding: 2%;
+}
+
+/* Entry */
+.entry {
+  background-color: #e9ecef;
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 3%;
+  border-radius: 20px;
+}
+
+.number-form input {
+  height: 40px;
+  width: 40%;
+  margin: 2%;
+  border-radius: 10px;
+  border-style: none;
+  padding: 0.3%;
+  font-family: "Lato", sans-serif;
+}
+
+.number-form button {
+  height: 40px;
+  width: 30%;
+  margin: 2%;
+  border-radius: 10px;
+  border-style: none;
+  padding: 0.3%;
+  font-family: "Lato", sans-serif;
+}
+
+.number-form button:hover {
+  cursor: pointer;
+  background-color: #f77f00;
+  color: #dee2e6;
+}
+
+/* Subjects */
+.subjects {
+  background-color: #e9ecef;
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 1%;
+  border-radius: 20px;
+  visibility: hidden;
+}
+
+/* Id */
+/* Navbar */
+#revalogo {
+  height: auto;
+  width: 30%;
+}
+
+#items-holder {
+  text-align: center;
+}
+
+/* Subjects */
+#numbersublabel {
+  font-size: 120%;
+  font-weight: lighter;
+  font-family: "Lato", sans-serif;
+}
