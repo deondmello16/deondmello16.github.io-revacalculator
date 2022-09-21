@@ -48,7 +48,7 @@ table {
 }
 #mainlogo{
 	/* background-color: ; */
-	width: 90%;
+	width: 20%;
     /* align-items: center; */
     text-align: center;
 }
@@ -78,15 +78,21 @@ h1{
 	margin-top: 3em;
 	padding: 3em;
 	text-align: center;
-	
-	padding-left: 10em;
-	padding-right: 10em;
 	margin: 20px;
 }
 
+span{
+	padding: 10px;
+}
+
+li{
+	padding: 50px;
+}
 
 input{
+	text-align: center;
 	border-radius: 1em;
+	padding: 5px;
 }
 
 
