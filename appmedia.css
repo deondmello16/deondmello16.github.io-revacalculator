@@ -15,7 +15,7 @@
 
 
     input{
-        font-size: medium;
+        font-size: 14px;
         text-align: center;
         width: auto;
         height: auto;
@@ -148,4 +148,14 @@
     #internalassignmentheading{
         font-family: 'Montserrat', sans-serif !important;   
     }
+
+    #numberofassignment{
+        font-size: 12px !important;
+        text-overflow: ellipsis;
+    }
+
+    #numberofinternal{
+        font-size: 12px;
+    }
+
 }
