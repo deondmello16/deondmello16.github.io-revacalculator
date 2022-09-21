@@ -13,17 +13,9 @@
     <!-- Css -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="appmedia.css">
     <!-- Favicon -->
     <link rel="icon" href="images/Favicon.png" />
     <title>Reva Grade Calculator</title>
-
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <!-- Fonts end -->
   </head>
   <body>
     <!-- Navbar -->
@@ -40,7 +32,7 @@
     </nav>
 
     <!-- Entry -->
-    <div class="entry">
+    <div id="entrysection" class="entry">
       <form class="number-form">
         <div>
           <input
@@ -54,19 +46,27 @@
             type="number"
           />
         </div>
-        <button id="iasubmit" type="submit">Submit</button>
+        <button class="number-form-button-hover" id="iasubmit" type="submit">
+          Submit
+        </button>
       </form>
     </div>
 
     <!-- Subjects -->
     <div id="subjectnumbersection" class="subjects">
       <form class="number-form">
-        <label id="numbersublabel" for="numbersub">Subjects :</label>
+        <label id="numbersublabel" for="numbersub">Subjects</label>
         <input id="numbersub" placeholder="Number of Subjects" type="number" />
-        <button type="submit">Process</button>
+        <button
+          class="number-form-button-hover"
+          id="subjectsnumberprocess"
+          type="submit"
+        >
+          Process
+        </button>
       </form>
     </div>
     <!-- Script -->
-    <script src="app.js"></script>
+    <script id="script" src="app.js"></script>
   </body>
 </html>
