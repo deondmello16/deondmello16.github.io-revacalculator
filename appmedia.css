@@ -1,5 +1,9 @@
 @media (max-width:500px){
 
+    html{
+        font-family: 'Montserrat', sans-serif !important;
+    }
+
     body{
         font-family: 'Montserrat', sans-serif !important;
         font-family: 'Poppins', sans-serif !important;
@@ -133,5 +137,15 @@
     
     h4{
         font-size: 17px;
+        font-family: 'Montserrat', sans-serif !important;
+    }
+
+    h1{
+        font-family: 'Montserrat', sans-serif !important; 
+        /* marks font is here  */
+    }
+
+    #internalassignmentheading{
+        font-family: 'Montserrat', sans-serif !important;   
     }
 }

@@ -110,7 +110,7 @@ h1{
 .iamarksinput {
   height: 40px;
   width: 90%;
-  margin: 2%;
+  /* margin: 2%; */
   border-radius: 10px;
   border-style: none;
   padding: 0.3%;
@@ -121,7 +121,7 @@ h1{
 .assignmentmarksinput {
   height: 40px;
   width: 90%;
-  margin: 2%;
+  /* margin: 2%; */
   border-radius: 10px;
   border-style: none;
   padding: 0.3%;
@@ -183,4 +183,91 @@ h1{
   font-weight: bold;
   font-family: "Lato", sans-serif;
   text-align: center;
+}
+
+a{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h4{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#entrysection.entry{
+  text-align: center;
+}
+
+.number-form{
+  text-align: center;
+  font-size: large;
+}
+
+#numberofinternal{
+  font-size: large;
+  text-align: center;
+}
+
+#numberofassignment{
+  font-size: large;
+  text-align: center;
+}
+
+#iasubmit.number-form-button-hover{
+  font-size: large;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#numbersub{
+  text-align: center;
+  font-size: large;
+}
+
+
+#subjectsnumberprocess.number-form-button-hover{
+  font-size: large;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+label{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#iasubmit{
+  font-size: large;
+  font-family: 'Montserrat', sans-serif !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form{
+  margin: auto;
+  text-align: center;
+}
+
+input{
+  text-align: center;
+  margin: auto;
+  font-size: large;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+button{
+  font-family: 'Montserrat', sans-serif !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: large;
+}
+
+h4{
+  font-size: 20px !important;
 }
