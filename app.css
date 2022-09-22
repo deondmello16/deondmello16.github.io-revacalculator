@@ -316,3 +316,40 @@ h4{
 #deon{
   margin-left: 50px;
 }
+
+.semmarksinput.iamarks{
+  height: 40px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-style:none ;
+  padding: 0.3%;
+  font-family:'Montserrat', sans-serif ;
+  display: block  ;
+}
+
+#semsection.subjectsection{
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#semheading{
+  font-size: 20px;
+  font-weight: 300 !important;
+  font-family:'Montserrat', sans-serif ;
+}
+
+#semmarks{
+  font-size: 57.6px !important;
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif ;
+}
+
+#internalassignmentmarks{
+  font-size: 57.6px;
+}
+
+h1{
+  font-weight: 600 !important;
+}
