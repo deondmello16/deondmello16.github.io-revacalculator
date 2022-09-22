@@ -158,4 +158,39 @@
         font-size: 12px;
     }
 
+    h4{
+        font-size: 20px !important;
+      }
+      
+      #enockimg{
+        margin-top: 10px;
+
+        width: 200px;
+        border-radius: 50%;
+      }
+      
+      .linkedinimg{
+        height: 75px;
+        padding-top: 5px;
+      }
+      
+      .h1n{
+        margin-bottom: 5px;
+      }
+      
+      #deonimg{
+        width: 200px;
+        border-radius: 50%;
+      }
+
+      #flex{
+        display: inline;
+      }
+      
+      #enock{
+        margin-right: 0%;
+      }
+      #deon{
+        margin-left: 0%;
+      }
 }

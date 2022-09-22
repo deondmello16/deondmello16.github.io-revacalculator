@@ -271,3 +271,48 @@ button{
 h4{
   font-size: 20px !important;
 }
+
+#enockimg{
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+
+}
+
+.linkedinimg{
+  height: 75px;
+  padding-top: 5px;
+}
+
+.h1n{
+  margin-bottom: 5px;
+}
+
+#deonimg{
+  margin-top: 9px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+#flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.imgdiv{
+
+  align-content: center;
+  margin: 10px;
+}
+
+#enock{
+  margin-right: 50px;
+}
+
+#deon{
+  margin-left: 50px;
+}
