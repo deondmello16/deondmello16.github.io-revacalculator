@@ -2,9 +2,11 @@
 var noofinternals = 0;
 var noofassignments = 0;
 var noofsubjects = 0;
+var semMark = 0;
 var arrOfSubject = [];
 var internalsMarks = [];
 var assignmentMarks = [];
+var semMarksArr = [];
 var count = 2;
 
 // Elements
@@ -59,7 +61,7 @@ subjectsnumberprocess.addEventListener("click", (event) => {
   event.preventDefault();
   if (subjectsnumberprocess.disabled != true) {
     if (numbersub.value != "" && noofsubjects == 0) {
-      if (parseInt(numbersub.value) <= 20) {
+      if (parseInt(numbersub.value) <= 20 && parseInt(numbersub.value) > 1) {
         noofsubjects = parseInt(numbersub.value);
         subjectsnumberprocess.disabled = true;
         if (subjectsnumberprocess.disabled != false) {
@@ -70,11 +72,11 @@ subjectsnumberprocess.addEventListener("click", (event) => {
         console.log(arraySubjects(noofsubjects));
         subjectInputSection("nextbutton", 1, "Next");
       } else {
-        alert("Enter a number between 1 to 20");
+        alert("Enter a number between 2 to 20");
         numbersub.value = "";
       }
     } else {
-      alert("Enter a number between 1 to 20");
+      alert("Enter a number between 2 to 20");
       numbersub.value = "";
     }
   }
@@ -90,13 +92,11 @@ function subjectInputSection(buttonId, subjectIndex, buttonText) {
   formSubjects.setAttribute("class", "subjectform");
 
   for (let i = 0; i < noofinternals; i++) {
-    console.log(i);
     const iaInput = createIAInput(i);
     formSubjects.appendChild(iaInput);
   }
 
   for (let i = 0; i < noofassignments; i++) {
-    console.log(i);
     const assignmentInput = createAssignmentInput(i);
     formSubjects.appendChild(assignmentInput);
   }
@@ -116,24 +116,79 @@ function subjectInputSection(buttonId, subjectIndex, buttonText) {
 
   const buttonClick = document.querySelector("button");
   buttonClick.addEventListener("click", (event) => {
+    var iaflag = false;
+    var assignflag = false;
     console.log(buttonClick.getAttribute("id"));
     if (buttonClick.getAttribute("id") != "nextbutton") {
-      event.preventDefault();
-      const singlesubjectsection = document.querySelector(
-        "#singlesubjectsection"
-      );
-      singlesubjectsection.remove();
-      marksDisplay();
-      console.log("Calculate Button Clicked");
+      const iaInputs = document.getElementsByClassName("iamarks");
+      const assignmentInputs = document.getElementsByClassName("assignmarks");
+      for (let i = 0; i < iaInputs.length; i++) {
+        if (
+          parseInt(iaInputs[i].value) != NaN &&
+          parseInt(iaInputs[i].value) <= 30
+        ) {
+          iaflag = true;
+        }
+      }
+      for (let i = 0; i < assignmentInputs.length; i++) {
+        if (
+          parseInt(assignmentInputs[i].value) != NaN &&
+          parseInt(assignmentInputs[i].value) <= 10
+        ) {
+          assignflag = true;
+        }
+      }
+      if (iaflag && assignflag) {
+        event.preventDefault();
+        const singlesubjectsection = document.querySelector(
+          "#singlesubjectsection"
+        );
+        singlesubjectsection.remove();
+        marksDisplay();
+      } else {
+        event.preventDefault();
+        alert(
+          "Enter all your marks IA marks should be between 0-30 and Assignment should be between 0-10"
+        );
+      }
     } else {
-      event.preventDefault();
-      const singlesubjectsection = document.querySelector(
-        "#singlesubjectsection"
-      );
-      iaMarks();
-      assignmentMark();
-      singlesubjectsection.remove();
-      subjectInputNextSection();
+      const iaInputs = document.getElementsByClassName("iamarks");
+      const assignmentInputs = document.getElementsByClassName("assignmarks");
+      for (let i = 0; i < iaInputs.length; i++) {
+        if (
+          parseInt(iaInputs[i].value) != NaN &&
+          parseInt(iaInputs[i].value) <= 30
+        ) {
+          iaflag = true;
+        } else {
+          iaflag = false;
+        }
+      }
+      for (let i = 0; i < assignmentInputs.length; i++) {
+        if (
+          parseInt(assignmentInputs[i].value) != NaN &&
+          parseInt(assignmentInputs[i].value) <= 10
+        ) {
+          assignflag = true;
+        } else {
+          assignflag = false;
+        }
+      }
+      if (iaflag && assignflag) {
+        event.preventDefault();
+        const singlesubjectsection = document.querySelector(
+          "#singlesubjectsection"
+        );
+        iaMarks();
+        assignmentMark();
+        singlesubjectsection.remove();
+        subjectInputNextSection();
+      } else {
+        event.preventDefault();
+        alert(
+          "Enter all your marks IA marks should be between 0-30 and Assignment should be between 0-10"
+        );
+      }
     }
   });
 }
@@ -146,11 +201,9 @@ function subjectInputNextSection() {
       count += 1;
       console.log("Count: " + count);
       arrOfSubject.pop();
-      console.log("Array size: " + arrOfSubject.length);
     } else {
       subjectInputSection("calculatebutton", count, "Calculate");
       arrOfSubject.pop();
-      console.log("Array size: " + arrOfSubject.length);
     }
   } else {
     location.reload();
@@ -160,21 +213,17 @@ function subjectInputNextSection() {
 //Get IA Marks
 function iaMarks() {
   const iaInputs = document.getElementsByClassName("iamarks");
-  console.log(iaInputs);
   for (let i = 0; i < iaInputs.length; i++) {
     internalsMarks.push(parseInt(iaInputs[i].value));
   }
-  console.log(internalsMarks);
 }
 
 //Get Assignment Marks
 function assignmentMark() {
   const assignmentInputs = document.getElementsByClassName("assignmarks");
-  console.log(assignmentInputs);
   for (let i = 0; i < assignmentInputs.length; i++) {
     assignmentMarks.push(parseInt(assignmentInputs[i].value));
   }
-  console.log(assignmentMarks);
 }
 
 // Create IA input
@@ -206,7 +255,6 @@ function nextButtons(buttonId, buttonText) {
   nextButton.setAttribute("class", "nextbutton");
   nextButton.setAttribute("type", "submit");
   nextButton.setAttribute("id", buttonId);
-  //nextButton.setAttribute();
   nextButton.innerText = buttonText;
   nextButton.classList.add("number-form-button-hover");
   return nextButton;
@@ -276,8 +324,123 @@ function marksDisplay() {
   assignmentMarksHolder.appendChild(assignmentsHeading);
   assignmentMarksHolder.appendChild(assignmentsMarks);
 
+  const semSection = document.createElement("div");
+  semSection.setAttribute("class", "subjectsection");
+  semSection.setAttribute("id", "semsection");
+
+  const semHeading = document.createElement("h1");
+  semHeading.innerText = "Semester";
+  semHeading.setAttribute("class", "subjectheading");
+  semSection.appendChild(semHeading);
+
+  //Add inputs
+  for (let i = 0; i < noofsubjects; i++) {
+    const input = displaySem(i);
+    semSection.appendChild(input);
+  }
+
+  const semCalculateButton = document.createElement("button");
+  semCalculateButton.setAttribute("class", "nextbutton");
+  semCalculateButton.setAttribute("type", "submit");
+  semCalculateButton.setAttribute("id", "semcalculatebutton");
+  semCalculateButton.innerText = "Calculate";
+
+  semCalculateButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    semMarks();
+    var flag = false;
+    for (let i = 0; i < semMarksArr.length; i++) {
+      if (semMarksArr[i] <= 100) {
+        flag = true;
+      } else {
+        flag = false;
+      }
+    }
+    if (flag) {
+      for (let i = 0; i < semMarksArr.length; i++) {
+        semMark += Math.ceil(semMarksArr[i] / 2);
+      }
+      semSection.remove();
+      const semMarksSection = displaySemMarks(semMark);
+      document.body.appendChild(semMarksSection);
+    } else {
+      event.preventDefault();
+      alert("Enter marks between 0-100");
+    }
+  });
+
+  semSection.appendChild(semCalculateButton);
+
   document.body.appendChild(internalsAssignmentHeading);
   document.body.appendChild(internalsAssignmentMarks);
   document.body.appendChild(internalMarksHolder);
   document.body.appendChild(assignmentMarksHolder);
+  document.body.appendChild(semSection);
 }
+
+//Sem Marks
+function displaySemMarks(marks) {
+  const semSectionDiv = document.createElement("div");
+  semSectionDiv.setAttribute("class", "marks");
+  const semheading = document.createElement("h1");
+  semheading.setAttribute("id", "semheading");
+  const semMarks = document.createElement("h4");
+  semMarks.setAttribute("id", "semmarks");
+  semheading.innerText = "Semester marks";
+  semMarks.innerText = marks;
+  semSectionDiv.appendChild(semheading);
+  semSectionDiv.appendChild(semMarks);
+  return semSectionDiv;
+}
+
+//Create Cgpa and Sgpa
+function displaySem(subjectIndex) {
+  const semInput = document.createElement("input");
+  semInput.setAttribute("class", "semmarksinput");
+  semInput.setAttribute("type", "number");
+  semInput.setAttribute("placeholder", `Subject-${subjectIndex + 1} Marks`);
+  semInput.classList.add("iamarks");
+  return semInput;
+}
+
+//Get Sem marks
+function semMarks() {
+  const semInputs = document.getElementsByClassName("semmarksinput");
+  for (let i = 0; i < semInputs.length; i++) {
+    semMarksArr.push(parseInt(semInputs[i].value));
+  }
+}
+
+//Tables Internal Assigments
+// function semTable(subjectSemMarks) {
+//   const semDiv = document.createElement("div");
+//   semDiv.setAttribute("class", "semdivtable");
+//   const semTables = document.createElement("table");
+//   semTables.setAttribute("class", "semtabletable");
+//   const semMarkstableRow = document.createElement("tr");
+//   semMarkstableRow.setAttribute("id", "semmarktablerow");
+//   const subjectTableRow = document.createElement("tr");
+//   subjectTableRow.setAttribute("id", "subjecttablerow");
+//   const headingTableRow = document.createElement("th");
+//   headingTableRow.setAttribute("id", "headingtablerow");
+//   semDiv.appendChild(semTables);
+//   semTables.appendChild(subjectTableRow);
+//   semTables.appendChild(semMarkstableRow);
+//   semTables.appendChild(headingTableRow);
+//   const tdTableSubH = document.createElement("td");
+//   const tdTableSemH = document.createElement("td");
+//   tdTableSubH.innerText = "Subjects";
+//   tdTableSemH.innerHTML = "Semester Marks";
+//   headingTableRow.appendChild(tdTableSubH);
+//   headingTableRow.appendChild(tdTableSemH);
+//   console.log(subjectSemMarks);
+//   for (let i = 0; i < subjectSemMarks.length; i++) {
+//     const tdTableSub = document.createElement("td");
+//     const tdTableSem = document.createElement("td");
+//     tdTableSub.innerText = i + 1;
+//     tdTableSem.innerText = subjectSemMarks[i];
+//     subjectTableRow.appendChild(tdTableSub);
+//     semMarkstableRow.appendChild(tdTableSem);
+//   }
+//   return semDiv;
+// }
